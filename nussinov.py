@@ -1,5 +1,7 @@
 ## Nussinov RNA folding algorithm + recursive backtrack. Implemented by Carlos G. Oliver ##
 
+import sys
+
 import numpy as np
 
 min_loop_length = 4
@@ -96,5 +98,4 @@ def nussinov(sequence):
     traceback(0,N-1, structure, DP, sequence)
     return (write_structure(sequence, structure), structure)
 if __name__ == "__main__":
-	sequence = "AAACCCCUUUCCCUUUAAA"
-	print(nussinov(sequence))
+	print(nussinov(sys.argv[1]))
