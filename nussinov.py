@@ -23,7 +23,7 @@ def OPT(i,j, sequence):
         unpaired = OPT(i, j-1, sequence)
 
         #check if j can be involved in a pairing with a position t
-        pairing = [1 + OPT(i, t-1, sequence) + OPT(t+1, j-1, sequence) for t in range(i, j-4)\
+        pairing = [1 + OPT(i, t-1, sequence) + OPT(t+1, j-1, sequence) for t in range(i, j-min_loop_length)\
                    if pair_check((sequence[t], sequence[j]))]
         if not pairing:
             pairing = [0]
